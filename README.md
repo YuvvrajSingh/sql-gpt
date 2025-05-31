@@ -268,11 +268,6 @@ docker build -t sql-assistant .
 docker run -p 8501:8501 -e GROQ_API_KEY=your_key sql-assistant
 ```
 
-### Other Platforms
-- **Heroku**: Use the included `Procfile`
-- **Railway**: Connect GitHub repo directly
-- **Render**: Deploy with auto-detect settings
-
 ---
 
 ### 🏷️ Version Information
