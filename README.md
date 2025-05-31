@@ -6,7 +6,7 @@
 [![Groq](https://img.shields.io/badge/Groq-FF6B35?style=for-the-badge&logoColor=white)](https://groq.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-> **Transform your database queries with AI-powered natural language processing**
+> **Transforming data queries into effortless conversations**
 
 An intelligent SQL database chat interface that allows you to interact with your databases using plain English. Powered by Groq's lightning-fast AI models and LangChain's SQL agent framework, this tool makes database querying accessible to everyone.
 
