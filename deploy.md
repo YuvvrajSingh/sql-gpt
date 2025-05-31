@@ -12,7 +12,7 @@
    - Click "New app"
    - Repository: `YuvvrajSingh/sql-gpt`
    - Branch: `master`
-   - Main file path: `app_enhanced_final.py`
+   - Main file path: `streamlit_app.py`
    - App URL: Choose your custom URL (e.g., `sql-assistant`)
 
 4. **Set Environment Variables**:
@@ -38,7 +38,7 @@ pip install -r requirements.txt
 # Edit .env file and add your GROQ_API_KEY
 
 # Run the app
-streamlit run app_enhanced_final.py
+streamlit run streamlit_app.py
 ```
 
 ### 3. **Other Deployment Options**
@@ -46,7 +46,7 @@ streamlit run app_enhanced_final.py
 #### **Heroku**
 1. Create a `Procfile`:
    ```
-   web: streamlit run app_enhanced_final.py --server.port=$PORT --server.address=0.0.0.0
+   web: streamlit run streamlit_app.py --server.port=$PORT --server.address=0.0.0.0
    ```
 
 2. Deploy:
@@ -65,7 +65,7 @@ streamlit run app_enhanced_final.py
    RUN pip install -r requirements.txt
    COPY . .
    EXPOSE 8501
-   CMD ["streamlit", "run", "app_enhanced_final.py", "--server.address", "0.0.0.0"]
+   CMD ["streamlit", "run", "streamlit_app.py", "--server.address", "0.0.0.0"]
    ```
 
 2. Build and run:
@@ -82,7 +82,7 @@ streamlit run app_enhanced_final.py
 #### **Render**
 1. Connect your GitHub repository
 2. Build command: `pip install -r requirements.txt`
-3. Start command: `streamlit run app_enhanced_final.py --server.address 0.0.0.0 --server.port $PORT`
+3. Start command: `streamlit run streamlit_app.py --server.address 0.0.0.0 --server.port $PORT`
 4. Set environment variable: `GROQ_API_KEY`
 
 ### 4. **Environment Variables Required**

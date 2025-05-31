@@ -1,8 +1,10 @@
 # Main entry point for Streamlit Cloud deployment
 # This file ensures Streamlit Cloud uses the correct deployment version
 
-from app_deploy import *
+from app_deploy import main
 
 if __name__ == "__main__":
-    # This will be executed when run directly
-    pass
+    main()
+
+# Auto-run for Streamlit Cloud
+main()

@@ -63,24 +63,32 @@ Get your free API key from [Groq Console](https://console.groq.com/)
 
 ### 4. Run the Application
 ```bash
-streamlit run app_enhanced_final.py
+streamlit run streamlit_app.py
 ```
 
-Or use the batch file on Windows:
-```cmd
-start.bat
+## 🚀 Quick Start
+
+The application consists of two main files:
+- `streamlit_app.py` - Main entry point for deployment
+- `app_deploy.py` - Core application logic with embedded configurations
+
+## 📁 Project Structure
+
 ```
-
-## 📱 Available Applications
-
-Choose from multiple app versions based on your needs:
-
-| App | Description | Best For |
-|-----|-------------|----------|
-| `app_enhanced_final.py` | **🌟 Recommended** - Full-featured with SQL Agent | Production use |
-| `app_robust.py` | Robust with model fallback | Reliability focused |
-| `app_enhanced_fixed.py` | Enhanced features | Feature testing |
-| `app_simple.py` | Basic functionality | Learning/Development |
+sql-gpt/
+├── streamlit_app.py          # 🚀 Main entry point
+├── app_deploy.py             # 🔧 Core application logic
+├── requirements.txt          # 📦 Python dependencies
+├── extended_sample_data.db   # 📊 Sample database
+├── create_sample_db.py       # 🛠️ Database creation script
+├── deploy.md                 # 📖 Deployment guide
+├── README.md                 # 📚 This file
+├── Procfile                  # ⚙️ Heroku deployment config
+├── secrets.toml              # 🔐 Secrets template
+├── .streamlit/               # ⚙️ Streamlit config
+├── .devcontainer/            # 🐳 Dev container setup
+└── .gitignore               # 🚫 Git ignore rules
+```
 
 ## 💡 Example Queries
 
@@ -167,7 +175,7 @@ sqlalchemy>=2.0.0
 
 ### **Local Development**
 ```bash
-streamlit run app_enhanced_final.py --server.port 8501
+streamlit run streamlit_app.py --server.port 8501
 ```
 
 ## 🤝 Contributing
