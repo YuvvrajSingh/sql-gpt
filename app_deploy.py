@@ -10,7 +10,6 @@ from dotenv import load_dotenv
 from langchain_groq import ChatGroq
 from sqlalchemy import create_engine, text, inspect
 from langchain.prompts import PromptTemplate
-# Using older imports for compatibility - deprecation warnings are expected
 from langchain.agents import create_sql_agent
 from langchain.sql_database import SQLDatabase
 from langchain.agents.agent_types import AgentType
