@@ -1,370 +1,397 @@
 # 🤖 Enhanced SQL Assistant
 
-An intelligent SQL database chat interface powered by Groq AI models. Chat with your databases using natural language and get instant results with optional data visualizations.
+[![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Python](https://img.shields.io/badge/Python-3.8+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org/)
+[![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=chainlink&logoColor=white)](https://langchain.com/)
+[![Groq](https://img.shields.io/badge/Groq-FF6B35?style=for-the-badge&logoColor=white)](https://groq.com/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
-![SQL Assistant Demo](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3.8+-blue?style=for-the-badge&logo=python&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-000000?style=for-the-badge&logo=chainlink&logoColor=white)
-![Groq](https://img.shields.io/badge/Groq-FF6B35?style=for-the-badge&logoColor=white)
+> **Transform your database queries with AI-powered natural language processing**
+
+An intelligent SQL database chat interface that allows you to interact with your databases using plain English. Powered by Groq's lightning-fast AI models and LangChain's SQL agent framework, this tool makes database querying accessible to everyone.
+
+---
+
+## 📋 Table of Contents
+
+- [✨ Features](#-features)
+- [🚀 Quick Start](#-quick-start)
+- [📖 Usage](#-usage)
+- [🛠️ Installation](#️-installation)
+- [🗄️ Database Support](#️-database-support)
+- [🎨 Visualization](#-visualization)
+- [⚙️ Configuration](#️-configuration)
+- [🚀 Deployment](#-deployment)
+- [🤝 Contributing](#-contributing)
+- [📝 License](#-license)
+- [🆘 Support](#-support)
+
+---
 
 ## ✨ Features
 
-### 🤖 **Advanced AI Integration**
-- **Multiple AI Models**: Choose from various Groq models with automatic fallback
-- **Smart Model Selection**: Auto-detection finds the best working model
-- **SQL Agent**: Intelligent query processing with LangChain SQL Agent
-- **Streaming Responses**: Real-time AI responses for better user experience
+### 🧠 **AI-Powered Intelligence**
+- **Multiple AI Models**: Choose from Groq's fastest models with automatic fallback
+- **Smart SQL Generation**: Converts natural language to optimized SQL queries
+- **Context Awareness**: Understands your database schema for better results
+- **Intelligent Agent**: Uses LangChain SQL Agent for complex query processing
 
-### 💬 **Natural Language Querying**
-- Ask questions in plain English
-- Automatic SQL query generation
-- Context-aware responses
-- Example queries for quick start
+### 💬 **Natural Language Interface**
+- **Plain English Queries**: Ask questions like "Show me top customers by sales"
+- **Example Templates**: Pre-built queries to get you started quickly
+- **Chat History**: Maintains conversation context for follow-up questions
+- **Real-time Responses**: Streaming AI responses for immediate feedback
 
-### 📊 **Data Visualization**
-- **Smart Visualization**: Only shows charts when explicitly requested
-- **Multiple Chart Types**: Bar charts, pie charts, histograms, scatter plots, line charts
-- **Interactive Plots**: Powered by Plotly for rich interactions
-- **Auto-suggestions**: AI suggests the best visualization for your data
-
-### 🎛️ **User-Friendly Interface**
-- **Clean Chat Interface**: Intuitive conversation flow
-- **Clear Chat**: Reset conversation history with one click
-- **Database Schema Viewer**: Explore your database structure
-- **Sample Database**: Included for immediate testing
-- **CSV Export**: Download query results instantly
+### 📊 **Smart Visualizations**
+- **On-Demand Charts**: Request visualizations with phrases like "show me a chart"
+- **Multiple Chart Types**: Bar, pie, line, scatter plots, and histograms
+- **Auto-Suggestions**: AI recommends the best visualization for your data
+- **Interactive Plots**: Powered by Plotly for rich, interactive experiences
 
 ### 🔒 **Security & Reliability**
-- **Read-only Operations**: Only SELECT queries allowed
-- **Error Handling**: Robust error management and user feedback
-- **Model Fallback**: Automatic switching if primary model fails
-- **Safe SQL Generation**: Protected against SQL injection
+- **Read-Only Operations**: Only SELECT queries are allowed for safety
+- **SQL Injection Protection**: Built-in security measures
+- **Error Handling**: Graceful error management with helpful feedback
+- **Model Fallback**: Automatic switching if primary AI model fails
+
+---
 
 ## 🚀 Quick Start
 
-### 1. Clone the Repository
+### Prerequisites
+- Python 3.8 or higher
+- A Groq API key ([Get yours free here](https://console.groq.com/))
+
+### 1️⃣ Clone & Setup
 ```bash
+# Clone the repository
 git clone https://github.com/YuvvrajSingh/sql-gpt.git
 cd sql-gpt
-```
 
-### 2. Install Dependencies
-```bash
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-### 3. Set Up Environment
-Create a `.env` file with your Groq API key:
+### 2️⃣ Configure API Key
+Create a `.env` file in the project root:
 ```env
 GROQ_API_KEY=your_groq_api_key_here
 ```
 
-Get your free API key from [Groq Console](https://console.groq.com/)
-
-### 4. Run the Application
+### 3️⃣ Launch the App
 ```bash
 streamlit run streamlit_app.py
 ```
 
-## 🚀 Quick Start
+🎉 **That's it!** Your SQL Assistant is now running at `http://localhost:8501`
 
-The application consists of two main files:
-- `streamlit_app.py` - Main entry point for deployment
-- `app_deploy.py` - Core application logic with embedded configurations
+---
 
-## 📁 Project Structure
+## 📖 Usage
 
+### Getting Started
+1. **Connect to AI**: Enter your Groq API key in the sidebar
+2. **Choose a Database**: Use the sample database or upload your own SQLite file
+3. **Start Chatting**: Ask questions in natural language
+
+### Example Conversations
+
+#### 📊 Data Exploration
 ```
-sql-gpt/
-├── streamlit_app.py          # 🚀 Main entry point
-├── app_deploy.py             # 🔧 Core application logic
-├── requirements.txt          # 📦 Python dependencies
-├── extended_sample_data.db   # 📊 Sample database
-├── create_sample_db.py       # 🛠️ Database creation script
-├── deploy.md                 # 📖 Deployment guide
-├── README.md                 # 📚 This file
-├── Procfile                  # ⚙️ Heroku deployment config
-├── secrets.toml              # 🔐 Secrets template
-├── .streamlit/               # ⚙️ Streamlit config
-├── .devcontainer/            # 🐳 Dev container setup
-└── .gitignore               # 🚫 Git ignore rules
+You: "What tables are in this database?"
+Assistant: Shows all available tables with descriptions
+
+You: "Show me the first 5 customers"
+Assistant: Returns customer data in a neat table format
 ```
 
-## 💡 Example Queries
+#### 📈 Analytics & Insights
+```
+You: "Which products sell the most?"
+Assistant: Analyzes sales data and shows top products
 
-Try these example queries to get started:
+You: "Create a bar chart of sales by region"
+Assistant: Generates an interactive bar chart visualization
+```
 
-### 📊 **Data Exploration**
-- "Show all tables in the database"
-- "Count total records in each table"
-- "Show the first 10 records from any table"
-- "Display column names and types for all tables"
+#### 🔍 Complex Queries
+```
+You: "Find customers who haven't ordered in the last 6 months"
+Assistant: Writes and executes complex SQL with date calculations
+```
 
-### 📈 **Analytics Queries**
-- "What are the top 5 customers by total order value?"
-- "Show monthly sales trends for this year"
-- "Which products have the highest profit margins?"
-- "Find employees with salaries above average"
+---
 
-### 🎨 **Visualization Requests**
-- "Create a bar chart of sales by region"
-- "Show me a pie chart of product categories"
-- "Visualize the distribution of employee salaries"
-- "Plot the correlation between price and sales"
+## 🛠️ Installation
+
+### Option 1: Standard Installation
+```bash
+# Clone repository
+git clone https://github.com/YuvvrajSingh/sql-gpt.git
+cd sql-gpt
+
+# Create virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Option 2: Development Setup
+```bash
+# Clone with development dependencies
+git clone https://github.com/YuvvrajSingh/sql-gpt.git
+cd sql-gpt
+
+# Install in development mode
+pip install -e .
+pip install -r requirements.txt
+```
+
+### Dependencies Overview
+| Package | Purpose | Version |
+|---------|---------|---------|
+| `streamlit` | Web interface framework | >=1.28.0 |
+| `langchain` | AI agent framework | >=0.1.0 |
+| `langchain-groq` | Groq AI integration | >=0.1.0 |
+| `pandas` | Data manipulation | >=2.0.0 |
+| `plotly` | Interactive visualizations | >=5.15.0 |
+| `sqlalchemy` | Database toolkit | >=2.0.0 |
+
+---
 
 ## 🗄️ Database Support
 
-### **Built-in Sample Database**
-- **Customers**: Company information and contacts
-- **Products**: Product catalog with pricing
-- **Orders**: Sales transactions and shipping
+### Built-in Sample Database
+The app includes a comprehensive sample database with:
+- **Customers**: Company information and contacts (50+ records)
+- **Products**: Product catalog with pricing (100+ items)
+- **Orders**: Sales transactions (1000+ orders)
 - **Employees**: Staff information and hierarchy
-- **Order Details**: Line items and pricing
+- **Order Details**: Detailed line items and metrics
 
-### **Custom Databases**
-- **SQLite**: Upload your own `.db` files
-- **MySQL**: Connect to remote MySQL databases (coming soon)
-- **PostgreSQL**: Support planned for future releases
+### Supported Database Types
+| Database | Status | File Extensions |
+|----------|---------|----------------|
+| SQLite | ✅ Full Support | `.db`, `.sqlite`, `.sqlite3` |
+| MySQL | 🔄 Coming Soon | - |
+| PostgreSQL | 🔄 Planned | - |
+| SQL Server | 🔄 Planned | - |
 
-## 🛠️ Technical Architecture
+### Upload Your Own Database
+1. Click **"Upload SQLite Database"** in the sidebar
+2. Select your `.db` file (max 200MB)
+3. The app automatically reads the schema
+4. Start querying immediately!
 
-### **AI Models (Groq)**
-- **Primary**: Llama 3.1 70B Versatile (best for complex queries)
-- **Fallback**: Llama 3.1 8B Instant (faster responses)
-- **Alternative**: Gemma 2 9B IT (backup option)
+---
 
-### **Core Technologies**
-- **Frontend**: Streamlit (Python web framework)
-- **AI/ML**: LangChain + Groq API
-- **Database**: SQLAlchemy (universal database toolkit)
-- **Visualization**: Plotly (interactive charts)
-- **Data Processing**: Pandas (data manipulation)
+## 🎨 Visualization
 
-### **Key Components**
-- **SQL Agent**: LangChain agent with SQL toolkit for intelligent query processing
-- **Model Manager**: Automatic model selection and fallback handling
-- **Query Processor**: Natural language to SQL conversion
-- **Visualization Engine**: Smart chart generation based on data types
-- **Security Layer**: SQL injection protection and query validation
+### Chart Types Available
+- **Bar Charts**: Perfect for categorical comparisons
+- **Pie Charts**: Great for showing proportions
+- **Line Charts**: Ideal for trends over time
+- **Scatter Plots**: Explore correlations between variables
+- **Histograms**: Visualize data distributions
 
-## 📋 Requirements
-
-### **System Requirements**
-- Python 3.8 or higher
-- 4GB+ RAM recommended
-- Internet connection for AI model access
-
-### **Python Dependencies**
-```txt
-streamlit>=1.28.0
-pandas>=2.0.0
-plotly>=5.15.0
-python-dotenv>=1.0.0
-langchain>=0.1.0
-langchain-groq>=0.1.0
-sqlalchemy>=2.0.0
+### How to Request Charts
+Simply mention visualization keywords in your queries:
+```
+"Show me a bar chart of sales by category"
+"Create a pie chart of customer distribution"
+"Plot the trend of orders over time"
+"Visualize the correlation between price and quantity"
 ```
 
-## 🚀 Deployment Options
+### Interactive Features
+- **Zoom & Pan**: Explore data in detail
+- **Hover Tooltips**: See exact values
+- **Download**: Save charts as PNG images
+- **Responsive**: Works on all screen sizes
 
-### **Streamlit Cloud** (Recommended)
-1. Push code to GitHub
-2. Connect at [share.streamlit.io](https://share.streamlit.io)
-3. Add secrets for `GROQ_API_KEY`
-4. Deploy with one click
+---
 
-### **Local Development**
+## ⚙️ Configuration
+
+### Environment Variables
+Create a `.env` file with these settings:
+```env
+# Required
+GROQ_API_KEY=your_groq_api_key_here
+
+# Optional
+STREAMLIT_SERVER_PORT=8501
+STREAMLIT_SERVER_ADDRESS=localhost
+LOG_LEVEL=INFO
+```
+
+### AI Model Configuration
+The app uses intelligent model selection:
+
+1. **Primary**: Llama 3.1 70B Versatile (best accuracy)
+2. **Fallback**: Llama 3.1 8B Instant (faster responses)
+3. **Backup**: Gemma 2 9B IT (alternative option)
+
+### Streamlit Configuration
+Customize the app behavior in `.streamlit/config.toml`:
+```toml
+[server]
+port = 8501
+enableCORS = false
+enableXsrfProtection = false
+
+[theme]
+primaryColor = "#FF4B4B"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#F0F2F6"
+```
+
+---
+
+## 🚀 Deployment
+
+### Streamlit Cloud (Recommended)
+[![Deploy to Streamlit Cloud](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/)
+
+1. Fork this repository
+2. Go to [share.streamlit.io](https://share.streamlit.io/)
+3. Connect your GitHub account
+4. Deploy from `streamlit_app.py`
+5. Add your `GROQ_API_KEY` in secrets
+6. Click "Deploy"!
+
+### Local Development
 ```bash
-streamlit run streamlit_app.py --server.port 8501
+# Standard run
+streamlit run streamlit_app.py
+
+# Custom port
+streamlit run streamlit_app.py --server.port 8502
+
+# Development mode with auto-reload
+streamlit run streamlit_app.py --server.runOnSave true
 ```
+
+### Docker Deployment
+```bash
+# Build image
+docker build -t sql-assistant .
+
+# Run container
+docker run -p 8501:8501 -e GROQ_API_KEY=your_key sql-assistant
+```
+
+### Other Platforms
+- **Heroku**: Use the included `Procfile`
+- **Railway**: Connect GitHub repo directly
+- **Render**: Deploy with auto-detect settings
+
+---
 
 ## 🤝 Contributing
 
-We welcome contributions! Please feel free to submit a Pull Request.
+We love contributions! Here's how you can help:
+
+### 🐛 Report Bugs
+- Use the [issue tracker](https://github.com/YuvvrajSingh/sql-gpt/issues)
+- Include steps to reproduce
+- Add screenshots if helpful
+
+### 💡 Suggest Features
+- Open a [feature request](https://github.com/YuvvrajSingh/sql-gpt/issues/new)
+- Describe your use case
+- Explain why it would be valuable
+
+### 🔧 Submit Code
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Make your changes
+4. Add tests if applicable
+5. Commit: `git commit -m 'Add amazing feature'`
+6. Push: `git push origin feature/amazing-feature`
+7. Open a Pull Request
+
+### 📝 Development Guidelines
+- Follow PEP 8 style guide
+- Add docstrings to new functions
+- Test your changes thoroughly
+- Update documentation as needed
+
+---
 
 ## 📝 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-- **Groq** for providing fast AI inference
-- **LangChain** for the SQL agent framework
-- **Streamlit** for the web framework
-- **Plotly** for interactive visualizations
+### What this means:
+- ✅ Commercial use allowed
+- ✅ Modification allowed
+- ✅ Distribution allowed
+- ✅ Private use allowed
+- ❌ No warranty provided
+- ❌ No liability accepted
 
 ---
 
-⭐ **Star this repository if you find it helpful!**
+## 🆘 Support
+
+### 📚 Documentation
+- **Deployment Guide**: See [deploy.md](deploy.md)
+- **API Reference**: Check the code documentation
+- **Examples**: Browse the example queries in the app
+
+### 💬 Get Help
+- **GitHub Issues**: [Report bugs or ask questions](https://github.com/YuvvrajSingh/sql-gpt/issues)
+- **Email**: Contact the maintainer directly
+- **Discussions**: Join the community discussions
+
+### 🔧 Troubleshooting
+
+| Issue | Solution |
+|-------|----------|
+| API key not working | Verify key at [console.groq.com](https://console.groq.com/) |
+| App won't start | Check Python version (3.8+ required) |
+| Database upload fails | Ensure file is valid SQLite (.db) |
+| Charts not showing | Try clearing browser cache |
+
+### 🏷️ Version Information
+- **Current Version**: 2.0.0
+- **Python Support**: 3.8, 3.9, 3.10, 3.11, 3.12
+- **OS Support**: Windows, macOS, Linux
+
+---
+
+## 🌟 Acknowledgments
+
+Special thanks to:
+- **[Groq](https://groq.com/)** for lightning-fast AI inference
+- **[LangChain](https://langchain.com/)** for the powerful agent framework
+- **[Streamlit](https://streamlit.io/)** for the amazing web framework
+- **[Plotly](https://plotly.com/)** for interactive visualizations
+- **Open Source Community** for inspiration and feedback
+
+---
+
+## 📊 Project Stats
+
+![GitHub stars](https://img.shields.io/github/stars/YuvvrajSingh/sql-gpt?style=social)
+![GitHub forks](https://img.shields.io/github/forks/YuvvrajSingh/sql-gpt?style=social)
+![GitHub issues](https://img.shields.io/github/issues/YuvvrajSingh/sql-gpt)
+![GitHub last commit](https://img.shields.io/github/last-commit/YuvvrajSingh/sql-gpt)
+
+---
+
+<div align="center">
+
+### 🚀 **Ready to revolutionize how you interact with databases?**
+
+[![Deploy to Streamlit Cloud](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/)
+
+**[⭐ Star this repo](https://github.com/YuvvrajSingh/sql-gpt)** • **[🍴 Fork it](https://github.com/YuvvrajSingh/sql-gpt/fork)** • **[📝 Report issues](https://github.com/YuvvrajSingh/sql-gpt/issues)**
 
 Made with ❤️ by [Yuvraj Singh](https://github.com/YuvvrajSingh)
-| `app_simple.py` | Basic functionality | Learning/Development |
-- **Data Processing**: Pandas
 
-## 📦 Installation
+</div>
 
-1. **Clone the repository**:
-
-   ```bash
-   git clone <repository-url>
-   cd SQLGPT
-   ```
-
-2. **Install dependencies**:
-
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Set up environment variables**:
-   Create a `.env` file with your API keys:
-
-   ```env
-   GROQ_API_KEY=your_groq_api_key_here
-   ```
-
-4. **Run the application**:
-   ```bash
-   streamlit run app.py
-   ```
-
-## 🎯 Getting Started
-
-### Option 1: Use Sample Database
-
-1. Enter your Groq API key in the sidebar
-2. Select "Use Sample Database"
-3. Click "Connect to Database"
-4. Start asking questions!
-
-### Option 2: Upload SQLite File
-
-1. Enter your Groq API key
-2. Select "Upload SQLite File"
-3. Upload your `.db` file
-4. Connect and start querying
-
-### Option 3: Custom Database
-
-1. Enter your Groq API key
-2. Select "Custom Database URL"
-3. Enter your database connection string
-4. Connect and explore your data
-
-## 💡 Sample Questions
-
-Try these example queries with the sample database:
-
-- "Show me all employees and their salaries"
-- "What is the average salary by department?"
-- "Which employee made the highest sales?"
-- "Show me sales data for the last 6 months"
-- "How many employees are in each department?"
-- "What are the top 3 products by sales amount?"
-
-## 🗄️ Sample Database Schema
-
-The built-in sample database includes:
-
-### Employees Table
-
-- `id`: Primary key
-- `name`: Employee name
-- `department`: Department (Engineering, Marketing, Sales, HR)
-- `salary`: Annual salary
-- `hire_date`: Date of hiring
-- `age`: Employee age
-
-### Sales Table
-
-- `id`: Primary key
-- `employee_id`: Foreign key to employees
-- `product`: Product/service sold
-- `amount`: Sale amount
-- `sale_date`: Date of sale
-
-## 🔧 Configuration
-
-### Environment Variables
-
-- `GROQ_API_KEY`: Your Groq API key (required)
-- `DATABASE_URL`: Optional default database URL
-
-### Supported Database URLs
-
-- SQLite: `sqlite:///path/to/database.db`
-- PostgreSQL: `postgresql://username:password@localhost:5432/dbname`
-- MySQL: `mysql://username:password@localhost:3306/dbname`
-
-## 📊 Visualization Features
-
-The application automatically generates visualizations based on query results:
-
-- **Bar Charts**: For categorical data with numeric values
-- **Line Charts**: For time series data
-- **Scatter Plots**: For correlation analysis
-- **Pie Charts**: For distribution analysis
-- **Histograms**: For frequency distributions
-- **Data Tables**: Always available as fallback
-
-## 🎨 UI Features
-
-- **Responsive Design**: Works on desktop and mobile
-- **Dark/Light Mode**: Streamlit's built-in theme support
-- **Real-time Feedback**: Streaming responses and progress indicators
-- **Interactive Charts**: Zoom, pan, and explore visualizations
-- **Copy/Export**: Easy data export capabilities
-
-## 🔒 Security Considerations
-
-- API keys are handled securely through environment variables
-- Database connections use SQLAlchemy's secure connection methods
-- No SQL injection vulnerabilities due to LangChain's parameterized queries
-- Local file handling for uploaded databases
-
-## 🚨 Troubleshooting
-
-### Common Issues
-
-1. **"Agent not initialized" error**:
-
-   - Ensure your Groq API key is correct
-   - Check database connection status
-
-2. **Database connection fails**:
-
-   - Verify database URL format
-   - Check database accessibility
-   - Ensure database drivers are installed
-
-3. **Visualization not showing**:
-   - Check if query returns data
-   - Try different chart types
-   - Ensure numeric columns exist for charts
-
-## 🔮 Future Enhancements
-
-- [ ] Support for more LLM providers (OpenAI, Anthropic, etc.)
-- [ ] Advanced visualization options
-- [ ] Query optimization suggestions
-- [ ] Database performance monitoring
-- [ ] Export functionality for reports
-- [ ] Multi-database querying
-- [ ] Custom chart templates
-- [ ] Query history and favorites
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📞 Support
-
-For support and questions, please open an issue in the repository.
-
----
-
-Built with ❤️ using LangChain, Streamlit, and Groq
