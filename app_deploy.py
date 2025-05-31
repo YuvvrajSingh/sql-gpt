@@ -342,12 +342,6 @@ SQL Query:
             return None
 
 def main():
-    st.set_page_config(
-        page_title="Enhanced SQL Assistant",
-        page_icon="🤖",
-        layout="wide"
-    )
-    
     st.title("🤖 Enhanced SQL Assistant")
     st.markdown("Chat with your SQL database using natural language!")
     
