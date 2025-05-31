@@ -21,9 +21,6 @@ An intelligent SQL database chat interface that allows you to interact with your
 - [🗄️ Database Support](#️-database-support)
 - [🎨 Visualization](#-visualization)
 - [⚙️ Configuration](#️-configuration)
-- [🚀 Deployment](#-deployment)
-- [🤝 Contributing](#-contributing)
-- [📝 License](#-license)
 - [🆘 Support](#-support)
 
 ---
@@ -250,18 +247,6 @@ secondaryBackgroundColor = "#F0F2F6"
 
 ---
 
-## 🚀 Deployment
-
-### Streamlit Cloud (Recommended)
-[![Deploy to Streamlit Cloud](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/)
-
-1. Fork this repository
-2. Go to [share.streamlit.io](https://share.streamlit.io/)
-3. Connect your GitHub account
-4. Deploy from `streamlit_app.py`
-5. Add your `GROQ_API_KEY` in secrets
-6. Click "Deploy"!
-
 ### Local Development
 ```bash
 # Standard run
@@ -290,87 +275,10 @@ docker run -p 8501:8501 -e GROQ_API_KEY=your_key sql-assistant
 
 ---
 
-## 🤝 Contributing
-
-We love contributions! Here's how you can help:
-
-### 🐛 Report Bugs
-- Use the [issue tracker](https://github.com/YuvvrajSingh/sql-gpt/issues)
-- Include steps to reproduce
-- Add screenshots if helpful
-
-### 💡 Suggest Features
-- Open a [feature request](https://github.com/YuvvrajSingh/sql-gpt/issues/new)
-- Describe your use case
-- Explain why it would be valuable
-
-### 🔧 Submit Code
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Make your changes
-4. Add tests if applicable
-5. Commit: `git commit -m 'Add amazing feature'`
-6. Push: `git push origin feature/amazing-feature`
-7. Open a Pull Request
-
-### 📝 Development Guidelines
-- Follow PEP 8 style guide
-- Add docstrings to new functions
-- Test your changes thoroughly
-- Update documentation as needed
-
----
-
-## 📝 License
-
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-### What this means:
-- ✅ Commercial use allowed
-- ✅ Modification allowed
-- ✅ Distribution allowed
-- ✅ Private use allowed
-- ❌ No warranty provided
-- ❌ No liability accepted
-
----
-
-## 🆘 Support
-
-### 📚 Documentation
-- **Deployment Guide**: See [deploy.md](deploy.md)
-- **API Reference**: Check the code documentation
-- **Examples**: Browse the example queries in the app
-
-### 💬 Get Help
-- **GitHub Issues**: [Report bugs or ask questions](https://github.com/YuvvrajSingh/sql-gpt/issues)
-- **Email**: Contact the maintainer directly
-- **Discussions**: Join the community discussions
-
-### 🔧 Troubleshooting
-
-| Issue | Solution |
-|-------|----------|
-| API key not working | Verify key at [console.groq.com](https://console.groq.com/) |
-| App won't start | Check Python version (3.8+ required) |
-| Database upload fails | Ensure file is valid SQLite (.db) |
-| Charts not showing | Try clearing browser cache |
-
 ### 🏷️ Version Information
 - **Current Version**: 2.0.0
 - **Python Support**: 3.8, 3.9, 3.10, 3.11, 3.12
 - **OS Support**: Windows, macOS, Linux
-
----
-
-## 🌟 Acknowledgments
-
-Special thanks to:
-- **[Groq](https://groq.com/)** for lightning-fast AI inference
-- **[LangChain](https://langchain.com/)** for the powerful agent framework
-- **[Streamlit](https://streamlit.io/)** for the amazing web framework
-- **[Plotly](https://plotly.com/)** for interactive visualizations
-- **Open Source Community** for inspiration and feedback
 
 ---
 
