@@ -13,8 +13,5 @@ st.set_page_config(
 # Now import and run the main app
 from app_deploy import main
 
-if __name__ == "__main__":
-    main()
-
-# Auto-run for Streamlit Cloud
+# Run the app (works for both local and Streamlit Cloud)
 main()
