@@ -21,7 +21,6 @@ An intelligent SQL database chat interface that allows you to interact with your
 - [🗄️ Database Support](#️-database-support)
 - [🎨 Visualization](#-visualization)
 - [⚙️ Configuration](#️-configuration)
-- [🆘 Support](#-support)
 
 ---
 
