@@ -195,12 +195,13 @@ class EnhancedSQLAssistant:
                     agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
                     handle_parsing_errors=True,
                     max_iterations=3,  # Strict limit on iterations
-                    max_execution_time=15,  # Reduced timeout
-                    early_stopping_method="generate"  # Stop early if possible
+                    max_execution_time=15  # Reduced timeout
                 )
                 return True
         except Exception as e:
             st.error(f"Error setting up SQL agent: {str(e)}")
+            # Log the specific error for debugging
+            print(f"Agent setup error: {str(e)}")
             self.agent = None
             return False
     
@@ -227,8 +228,18 @@ class EnhancedSQLAssistant:
             # Use ThreadPoolExecutor for proper timeout handling (Windows compatible)
             def run_agent_query():
                 try:
-                    return self.agent.run(natural_language_query)
+                    # Use invoke instead of deprecated run method
+                    response = self.agent.invoke({"input": natural_language_query})
+                    # Extract the output from the response
+                    if isinstance(response, dict) and 'output' in response:
+                        return response['output']
+                    elif isinstance(response, str):
+                        return response
+                    else:
+                        return str(response)
                 except Exception as e:
+                    # Log the specific error for debugging
+                    print(f"Agent execution error: {str(e)}")
                     raise e
             
             # Execute with timeout using ThreadPoolExecutor
@@ -251,7 +262,11 @@ class EnhancedSQLAssistant:
                     
         except Exception as e:
             # Always fallback to direct SQL on any error
-            st.warning(f"Agent execution failed: {str(e)[:100]}... Using direct SQL approach.")
+            error_message = str(e)
+            if "early_stopping_method" in error_message:
+                st.warning("Agent configuration issue detected. Using direct SQL approach...")
+            else:
+                st.warning(f"Agent execution failed: {error_message[:100]}... Using direct SQL approach.")
             return self.fallback_sql_execution(natural_language_query)
     
     def fallback_sql_execution(self, natural_language_query):
